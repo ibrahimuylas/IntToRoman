@@ -1,0 +1,31 @@
+﻿@model  IntToRoman.Models.DataModel
+
+
+@{
+    using (Html.BeginForm("Convert", "Home", FormMethod.Post))
+    {
+        <div class="tab-content">
+
+
+            <div class="form-group">
+                @Html.ValidationSummary(true)
+                <div class="form-text">
+                    Enter a Number
+                </div>
+                <div>
+                    @Html.TextBoxFor(m => m.Number, new { @class = "form-control", @type = "number" })
+                    @Html.ValidationMessageFor(m => m.Number)
+                </div>
+                <br />
+                <div>
+                    <input type="submit" name="name" value="Convert" class="btn-success form-control" />
+                </div>
+                <div class="form-text">
+                    Roman Number: @Html.DisplayFor(m => m.RomanNumber)
+                </div>
+
+            </div>
+        </div>
+    }
+}
+
